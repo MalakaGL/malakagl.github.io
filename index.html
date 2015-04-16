@@ -89,7 +89,7 @@
                             e.innerHTML = response.data[0].from.name + ' => ' + response.data[0].message + '<br>';
 
                             while (e.firstChild) {
-                                item.appendChild(e.firstChild);
+                                document.getElementById('fb-root').appendChild(e.firstChild);
                             }
                         }
             });
