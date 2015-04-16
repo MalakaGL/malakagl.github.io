@@ -79,15 +79,14 @@
         // successful.  See statusChangeCallback() for when this call is made.
         function testAPI(accessToken) {
             console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me/feed',
+            FB.api('/me/feed?limit=100',
                     "get",
-                    array('since' <= '205-01-16'),
+                    {accessToken: FB.getAuthResponse},
                     function(response) {debugger;
                         for(i=0;i<response.data.length; i++)
                         {debugger;
                             var e = document.createElement('div');
                             e.innerHTML = response.data[i].from.name + ' => ' + response.data[i].message + '<br>';
-
                             while (e.firstChild) {
                                 document.getElementById('fb-root').appendChild(e.firstChild);
                             }
