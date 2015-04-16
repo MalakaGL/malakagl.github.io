@@ -83,10 +83,10 @@
                     "get",
                     {accessToken: FB.getAuthResponse},
                     function(response) {debugger;
-                        _.forEach(response.data, item)
+                        for(i=0;i<response.data.length; i++)
                         {debugger;
                             var e = document.createElement('div');
-                            e.innerHTML = item.from.name + ' => ' + item.message + '<br>';
+                            e.innerHTML = response.data[i].from.name + ' => ' + response.data[i].message + '<br>';
 
                             while (e.firstChild) {
                                 document.getElementById('fb-root').appendChild(e.firstChild);
