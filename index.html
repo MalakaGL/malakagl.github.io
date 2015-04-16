@@ -18,9 +18,7 @@
                     'post',
                     {message: 'Hello, world!'},
                     function (response) {
-                        if (response && !response.error) {
-                            //process when success
-                        }
+                        document.getElementById(response.toString());
                     }
             );
         }, {scope: 'publish_actions'});
