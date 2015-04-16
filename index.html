@@ -13,9 +13,16 @@
             xfbml      : true,
             version    : 'v2.3'
         });
-        FB.login(function(){}, {scope: 'publish_actions'});
         FB.login(function(){
-            FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+            FB.api('/me/feed',
+                    'post',
+                    {message: 'Hello, world!'},
+                    function (response) {
+                        if (response && !response.error) {
+                            //process when success
+                        }
+                    }
+            );
         }, {scope: 'publish_actions'});
     };
 
