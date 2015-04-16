@@ -14,9 +14,7 @@
             version    : 'v2.3'
         });
         FB.login(function(){
-            FB.api('/me/feed',
-                    'post',
-                    {message: 'Hello, world!'},
+            FB.api('/me/feed?',
                     function (response) {debugger;
                         document.getElementById(response.toString());
                     }
