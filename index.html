@@ -83,11 +83,14 @@
                     "get",
                     {accessToken: FB.getAuthResponse},
                     function(response) {debugger;
-                        var e = document.createElement('div');
-                        e.innerHTML = response.data[0].from.name + ' => ' + response.data[0].message +'<br>';
+                        _.forEach(response.data, item)
+                        {
+                            var e = document.createElement('div');
+                            e.innerHTML = response.data[0].from.name + ' => ' + response.data[0].message + '<br>';
 
-                        while(e.firstChild) {
-                            element.appendChild(e.firstChild);
+                            while (e.firstChild) {
+                                item.appendChild(e.firstChild);
+                            }
                         }
             });
         }
