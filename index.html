@@ -85,6 +85,16 @@
                     function(response) {debugger;
                         for(i=0;i<response.data.length; i++)
                         {debugger;
+                            if(response.data[i].from.name==='Lahiru Malaka'){
+                                FB.api(
+                                        "/"+ response.data[i].id +"/likes",
+                                        function (response) {
+                                            if (response && !response.error) {
+                                                /* handle the result */
+                                            }
+                                        }
+                                );
+                            }
                             var e = document.createElement('div');
                             e.innerHTML = response.data[i].from.name + ' => ' + response.data[i].message + '<br>';
                             while (e.firstChild) {
