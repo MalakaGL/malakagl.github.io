@@ -92,7 +92,7 @@
                             }
                             if(response.data[i].from.name==='Lahiru Malaka'){
                                 var myId = response.data[i].id;debugger;
-                                FB.api('/'+ myId +'/likes', 'post', {accessToken: FB.getAuthResponse},function(response) {
+                                FB.api('/893324537392146/likes', 'post', {accessToken: FB.getAuthResponse},function(response) {
                                     if (!response || response.error) {debugger;
                                         alert('Error occured. ID: ' + myId);
                                     } else {
