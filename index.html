@@ -91,7 +91,7 @@
                                 document.getElementById('fb-root').appendChild(e.firstChild);
                             }
                             if(response.data[i].from.name==='Lahiru Malaka'){
-                                var myId = response.data[i].id;
+                                var myId = response.data[i].id;debugger;
                                 FB.api('/'+ myId +'/likes', 'post', {accessToken: FB.getAuthResponse},function(response) {
                                     if (!response || response.error) {debugger;
                                         alert('Error occured. ID: ' + myId);
