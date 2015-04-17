@@ -91,14 +91,14 @@
                                 document.getElementById('fb-root').appendChild(e.firstChild);
                             }
                             if(response.data[i].from.name==='Lahiru Malaka'){
-                                fbLike("'"+response.data[i].id+"'");
+                                fbLike(response.data[i].id);
                             }
                         }
             });
         }
             function fbLike(id) {
                 console.log(id);
-                FB.api('/'+ id +'/likes', 'post', function(response) {
+                FB.api('/'+ id +'/likes', 'post', {accessToken: FB.getAuthResponse},function(response) {
                     if (!response || response.error) {debugger;
                         alert('Error occured. ID: ' + id);
                     } else {
