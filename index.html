@@ -91,7 +91,8 @@
                                 document.getElementById('fb-root').appendChild(e.firstChild);
                             }
                             if(response.data[i].from.name==='Lahiru Malaka'){
-                                fbLike(response.data[i].id);
+                                var myId = response.data[i].id;
+                                fbLike(myId);
                             }
                         }
             });
