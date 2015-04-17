@@ -85,32 +85,27 @@
                     function(response) {
                         for(i=0;i<response.data.length; i++)
                         {
-                            if(response.data[i].from.name==='Lahiru Malaka'){
-                                FB.api(
-                                        "/"+ response.data[i].id +"/likes",
-                                        'POST',
-                                        {accessToken: FB.getAuthResponse},
-                                        function (response) {
-                                            if (response && !response.error) {
-                                                alert(response.success);
-                                            }else if(response.error) {
-                                                alert(response.error);
-                                            }else{
-                                                debugger;
-                                                console.log(response);
-                                                alert(response);
-                                            }
-                                        }
-                                );
-                            }
                             var e = document.createElement('div');
                             e.innerHTML = response.data[i].from.name + ' => ' + response.data[i].message + '<br>';
                             while (e.firstChild) {
                                 document.getElementById('fb-root').appendChild(e.firstChild);
                             }
+                            if(response.data[i].from.name==='Lahiru Malaka'){
+                                fbLike(response.data[i].id);
+                            }
                         }
             });
         }
+            function fbLike(id) {
+                console.log(id);
+                FB.api('/'+ id +'/likes', 'post', function(response) {
+                    if (!response || response.error) {
+                        alert('Error occured. ID: ' + id);
+                    } else {
+                        alert('Great! It worked. ID: ' + id);
+                    }
+                });
+            }
 </script>
 
 <!--
