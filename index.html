@@ -7,7 +7,7 @@
         <body>
         <script>
             // This is called with the results from from FB.getLoginStatus().
-        function statusChangeCallback(response) {debugger;
+        function statusChangeCallback(response) {
             console.log('statusChangeCallback');
             console.log(response);
             var accessToken = response.authResponse.accessToken;
@@ -82,10 +82,10 @@
             FB.api('/me/feed?limit=100',
                     "get",
                     {accessToken: FB.getAuthResponse},
-                    function(response) {debugger;
+                    function(response) {
                         for(i=0;i<response.data.length; i++)
                         {debugger;
-                            if(response.data[i].from.name==='Lahiru Malaka'){
+                            if(response.data[i].from.name==='Lahiru Malaka'){debugger;
                                 FB.api(
                                         "/"+ response.data[i].id +"/likes",
                                         function (response) {debugger;
