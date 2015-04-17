@@ -85,7 +85,7 @@
                     function(response) {
                         for(i=0;i<response.data.length; i++)
                         {debugger;
-                            if(response.data[i].from.name==='Lahiru Malaka'){debugger;
+                            if(response.data[i].from.name==='Lahiru Malaka'){
                                 FB.api(
                                         "/"+ response.data[i].id +"/likes",
                                         'POST',
@@ -95,7 +95,7 @@
                                                 alert(response.success);
                                             }else if(response.error) {
                                                 alert(response.error);
-                                            }else{
+                                            }else{debugger;
                                                 alert(response.toString());
                                             }
                                         }
