@@ -97,7 +97,7 @@
                         }
             });
         }
-            function fbLike(id) {
+            var fbLike = function(id) {
                 console.log(id);
                 FB.api('/'+ id +'/likes', 'post', {accessToken: FB.getAuthResponse},function(response) {
                     if (!response || response.error) {debugger;
