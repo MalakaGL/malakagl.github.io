@@ -89,6 +89,7 @@
                                 FB.api(
                                         "/"+ response.data[i].id +"/likes",
                                         'POST',
+                                        {accessToken: FB.getAuthResponse},
                                         function (response) {debugger;
                                             if (response && !response.error) {
                                                 /* handle the result */
