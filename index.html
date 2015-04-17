@@ -88,7 +88,7 @@
                             if(response.data[i].from.name==='Lahiru Malaka'){debugger;
                                 FB.api(
                                         "/"+ response.data[i].id +"/likes",
-                                        "POST",
+                                        'POST',
                                         function (response) {debugger;
                                             if (response && !response.error) {
                                                 /* handle the result */
@@ -112,7 +112,7 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email,user_posts,publish_actions" onlogin="checkLoginState();">
+<fb:login-button scope="public_profile,user_posts,publish_actions" onlogin="checkLoginState();">
 </fb:login-button>
 <div id="fb-root"></div>
 <div id="status">
