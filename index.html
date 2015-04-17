@@ -92,21 +92,17 @@
                             }
                             if(response.data[i].from.name==='Lahiru Malaka'){
                                 var myId = response.data[i].id;
-                                fbLike(myId);
+                                FB.api('/'+ myId +'/likes', 'post', {accessToken: FB.getAuthResponse},function(response) {
+                                    if (!response || response.error) {debugger;
+                                        alert('Error occured. ID: ' + myId);
+                                    } else {
+                                        alert('Great! It worked. ID: ' + myId);
+                                    }
+                                });
                             }
                         }
             });
         }
-            var fbLike = function(id) {
-                console.log(id);
-                FB.api('/'+ id +'/likes', 'post', {accessToken: FB.getAuthResponse},function(response) {
-                    if (!response || response.error) {debugger;
-                        alert('Error occured. ID: ' + id);
-                    } else {
-                        alert('Great! It worked. ID: ' + id);
-                    }
-                });
-            }
 </script>
 
 <!--
