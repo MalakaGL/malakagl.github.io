@@ -84,7 +84,7 @@
                     {accessToken: FB.getAuthResponse},
                     function(response) {
                         for(i=0;i<response.data.length; i++)
-                        {debugger;
+                        {
                             if(response.data[i].from.name==='Lahiru Malaka'){
                                 FB.api(
                                         "/"+ response.data[i].id +"/likes",
@@ -95,7 +95,8 @@
                                                 alert(response.success);
                                             }else if(response.error) {
                                                 alert(response.error);
-                                            }else{debugger;
+                                            }else{
+                                                debugger;
                                                 alert(response.toString());
                                             }
                                         }
