@@ -90,9 +90,13 @@
                                         "/"+ response.data[i].id +"/likes",
                                         'POST',
                                         {accessToken: FB.getAuthResponse},
-                                        function (response) {debugger;
+                                        function (response) {
                                             if (response && !response.error) {
-                                                /* handle the result */
+                                                alert(response.success);
+                                            }else if(response.error) {
+                                                alert(response.error);
+                                            }else{
+                                                alert(response);
                                             }
                                         }
                                 );
