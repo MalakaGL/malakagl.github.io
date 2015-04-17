@@ -87,9 +87,8 @@
                         {debugger;
                             if(response.data[i].from.name==='Lahiru Malaka'){debugger;
                                 FB.api(
-                                        "/'"+ response.data[i].id +"'/likes",
+                                        "/"+ response.data[i].id +"/likes",
                                         "POST",
-                                        {accessToken: FB.getAuthResponse},
                                         function (response) {debugger;
                                             if (response && !response.error) {
                                                 /* handle the result */
