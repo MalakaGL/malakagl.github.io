@@ -99,7 +99,7 @@
             function fbLike(id) {
                 console.log(id);
                 FB.api('/'+ id +'/likes', 'post', function(response) {
-                    if (!response || response.error) {
+                    if (!response || response.error) {debugger;
                         alert('Error occured. ID: ' + id);
                     } else {
                         alert('Great! It worked. ID: ' + id);
